@@ -1,0 +1,85 @@
+﻿<Window x:Class="WpfApp090323.Window3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp090323"
+        mc:Ignorable="d"
+        Title="Window3" Height="450" Width="800">
+
+    <Window.Resources>
+        <Style x:Key="myDefaultButton" TargetType="Button">
+
+            <Setter Property="Background" Value="LightSeaGreen"/>
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="Margin" Value="10"/>
+
+        </Style>
+        <Style TargetType="Button" BasedOn="{StaticResource myDefaultButton}"/>
+
+        <Style x:Key="myDefaultTextbox" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="DarkViolet"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="FontWeight" Value="ExtraBold"/>
+            <Setter Property="FontSize" Value="50"/>
+            <Setter Property="Padding" Value="5"/>
+
+
+        </Style>
+        
+    </Window.Resources>
+
+    <Grid>
+        <Border Background="LightGray" Grid.Column="0" Grid.ColumnSpan="3"></Border>
+        <Border Background="LimeGreen" Grid.Row="1" Grid.ColumnSpan="3"></Border>
+        <Border Background="LightGreen" Grid.Row="2" Grid.Column="0"></Border>
+        <Border Background="LightBlue" Grid.Row="2" Grid.Column="2"></Border>
+        <Border Background="#fb6767" Grid.Row="2" Grid.Column="1"></Border>
+        <Border Background="LightGray" Grid.Row="3" Grid.Column="0  " Grid.ColumnSpan="3"></Border>
+
+        
+        
+        
+        <DockPanel LastChildFill="True">
+
+            <Border DockPanel.Dock="Right" Height="450"></Border>
+
+
+        </DockPanel>
+
+        <TextBlock Style="{StaticResource myDefaultTextbox}"  Grid.Row="0" Grid.ColumnSpan="3" Text="Baner Górny"/>
+
+        <TextBlock Style="{StaticResource myDefaultTextbox}" DockPanel.Dock="Bottom" Margin="20,1" FontSize="12" VerticalAlignment="Bottom"  Grid.Row="3" Grid.ColumnSpan="3" Text="Stopka"/>
+
+        <StackPanel  Grid.Row="1" Grid.ColumnSpan="3" Orientation="Horizontal">
+           
+            
+            <Button Style="{StaticResource myDefaultButton}">Dodaj obiekt</Button>
+            <Button Style="{StaticResource myDefaultButton}">Edytuj obiekt</Button>
+            <Button Style="{StaticResource myDefaultButton}">Importuj obiekt</Button>
+            <Button Style="{StaticResource myDefaultButton}">Eksportuj obiekt</Button>
+            <Button Style="{StaticResource myDefaultButton}">Usuń obiekt</Button>
+        </StackPanel>
+
+        <GridSplitter Width="7" Grid.Row="2" Background="Black"></GridSplitter>
+        <GridSplitter Width="7" Grid.Row="2" Grid.Column="1" Background="Black"></GridSplitter>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            
+        </Grid.RowDefinitions>
+    </Grid>
+</Window>
